@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "task-management-app-430719",
+  "private_key_id": "bee0492b72fde1f723d7e126c48a41e070c33ece",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/9ewGd4qnrD/8\n8EBeKIQ5ONaEYzTswQXo0+EwoxBNlclbT1P68BvL2j/cp71KQ8egLzWauNmv4n36\ny5r6JwwkgpTsJD2Nnk2pCRZ/gmp5waniH4gUlu/GUAnNKeRJF7SkDC7+PNXBTvF+\n6y08ZJWyd71b9XyspaLG+Mn+PYdrsSR0JLQP72ZU6BIi8YlFPA/oDwpEM6q0Opbt\nBBAXEYxYViKZV8SJab1zE3LwwqoO7t/i1owMG5RkzpPADI/G7UPQsl8hLqk29wtJ\neFFUtrvziaU6BNC0vUsPDLLweuBAOo6rzHYUsfE85/bXfriHXeHjNMpO57pfa61z\nDsuV4i9BAgMBAAECggEAKpwItGXIFBB20qs0qoHlWbtNWK0ZxBzTdjtD3vMvLP2c\n6MUKz+aI0P7k0pK0QH4bm2mnRS0XewR0MN2NjM3qktcefe1McXlMZUNUaGDXSCgO\nENitcN6RIizFhDIyj2vw58Ihk0MHMqXWkrTawW9VUDxmfrlW347Tu0VhturK+sMA\nCv1S7rnW9JzKgQy4M2wqkcmdX18Ef3oDWntpELsmgGR1OnmmI9BxAXduiUKwfXtW\n57aVqVLpwZwb4Huq3rbbI1jWG1Xf1rnWQdOOpG4wuBYP//58OUQ5UMswbR+6oPmb\nHuTpGBXNdat64z2+kczOqxR3KTU0REtV1q++izBznQKBgQD5X2ohvNoB8rHUv0aw\nrNAFPy1ZV/ALHHgJk55LsM0Jpktiu/bJOZ8XZujpA+BsYW34M0/R55webMgzVrjP\nf8bBKeOfEzjSP9D7GWfF9eAVpHEic0U9U5dfoa2iF8KgAXoPI14gP07CEWOThZJB\n1TXE5onfIcSheKtqdKLAMWz2hQKBgQDFD+jKDBSQ9JPU8LJjARQi4AerNnDg5yFg\naup52SNWxCIeBMqUb3h8zwKqnCL0+UUDRzKe2ZZHhfwMArjkjbR3QOCGW2Zez2If\n+psOtkoX2YULPxvj29URwmdqoAsOt4NN8Bcn5h2xrQwJEM80yXDXWZczUMir2QA8\ne3UiVjVIjQKBgAkWJPPdwcPYaApsfdLqORo31xsuTRzaiLUwn8/6PT5gxNZwKuni\nI53irhHvhjnswukMVZg8bD/fjtvwCQPmkANx101wkd13XdIIdvOLpgKj30t2D8vQ\nQ+/EIGOLohfadewfScq7A8+meo5hi5bCghcOn29194g6sWRLo7KFGodRAoGAflfe\n5nusS+ujRGk11egBIwMDp6/12xwU+B5USt7+m0iQnzJvN4/obgzDJuOIPgv7RUjG\nmbXjdePfX0v3gwGfbL35teqvzaWkweAIvfv9sSDS/gzuMr7k8sfzShdmP39E/hkq\nn3gYHaxXBRDz6GImqMtV956ZqiQs1JpK1UL0UpkCgYEAiVzuWUF3EAGRJFwroPTF\nH9KIuYAYzbpEhuLbo5WykUryZ12UfH0JE1w6LTzE/WaeHWUaPYLLllkIdaahxxzW\n36SCm8Q6HQMGuI7JI7AKf5XDMisIewfgLs59d+vb0fnxDs6jv4tI1xh/Fjy5kChD\n+cp2WjkwCMnXEUDZkCMQW2g=\n-----END PRIVATE KEY-----\n",
+  "client_email": "github-860@task-management-app-430719.iam.gserviceaccount.com",
+  "client_id": "112425796265546309393",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/github-860%40task-management-app-430719.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

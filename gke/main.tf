@@ -19,13 +19,13 @@ variable "region" {
 variable "cluster_name" {
   description = "The name of the GKE cluster"
   type        = string
-  default     = "frontend"
+  default     = "tma-cluster"
 }
 
 variable "node_count" {
   description = "Number of nodes in the node pool"
   type        = number
-  default     = 1
+  default     = 2
 }
 
 variable "node_machine_type" {

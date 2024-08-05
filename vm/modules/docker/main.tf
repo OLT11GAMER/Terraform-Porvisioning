@@ -29,3 +29,14 @@ resource "google_compute_instance" "docker_instance" {
     }
   }
 }
+resource "google_compute_firewall" "allow_postgres" {
+  name    = "allow-postgres"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["5672","15672"]
+  }
+
+  source_ranges = ["0.0.0.0/0"] # Allow traffic from any IP. For better security, replace with your Kubernetes cluster's IP range.
+}
