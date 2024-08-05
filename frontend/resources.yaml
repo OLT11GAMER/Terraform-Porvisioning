@@ -2,31 +2,31 @@
 apiVersion: networking.gke.io/v1beta1
 kind: FrontendConfig
 metadata:
-  name: back-demo
+  name: demo
 spec:
   redirectToHttps:
-    enabled: true
+    enabled: false
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: back-demo
+  name: demo
   annotations:
     kubernetes.io/ingress.class: "gce"
-    kubernetes.io/ingress.global-static-ip-name: back-demo
-    networking.gke.io/v1beta1.FrontendConfig: back-demo
-    networking.gke.io/managed-certificates: back-demo
+    kubernetes.io/ingress.global-static-ip-name: demo
+    networking.gke.io/v1beta1.FrontendConfig: demo
+    networking.gke.io/managed-certificates: demo
 spec:
   defaultBackend:
     service:
-      name: back-demo
+      name: demo
       port:
         number: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: back-demo
+  name: demo
 spec:
   type: NodePort
   selector:
@@ -34,27 +34,27 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 7001
+    targetPort: 3000
   type: LoadBalancer  
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: back-demo
+  name: demo
   labels:
-    app: back-demo
+    app: demo
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: back-demo
+      app: demo
   template:
     metadata:
       labels:
-        app: back-demo
+        app: demo
     spec:
       containers:
-      - name: back-demo
-        image: europe-central2-docker.pkg.dev/GOOGLE_PROJECT/docker-images/tma-back-image:IMAGE_TAG
+      - name: demo
+        image: europe-central2-docker.pkg.dev/GOOGLE_PROJECT/docker-images/tma_front_image:IMAGE_TAG
         ports:
-        - containerPort: 7001
+        - containerPort: 3000

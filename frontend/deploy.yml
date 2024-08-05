@@ -1,9 +1,9 @@
-name: Deploy Nginx
+name: Deploy Front Vite
 
 on:
   push:
     branches:
-    - 'master'
+    - 'main'
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -27,9 +27,10 @@ jobs:
         GOOGLE_PROJECT: ${{ secrets.GCP_PROJECT_ID }}
       run: |
         gcloud auth configure-docker europe-central2-docker.pkg.dev
-        docker pull mcr.microsoft.com/dotnet/aspnet:8.0
-        docker build -t europe-central2-docker.pkg.dev/task-management-app-430719/docker-images/tma_back_image:$IMAGE_TAG .
-        docker push europe-central2-docker.pkg.dev/task-management-app-430719/docker-images/tma_back_image:$IMAGE_TAG
+        docker pull node:18-alpine
+        docker build -t europe-central2-docker.pkg.dev/task-management-app-430719/docker-images/tma_front_image:$IMAGE_TAG .
+        docker push europe-central2-docker.pkg.dev/task-management-app-430719/docker-images/tma_front_image:$IMAGE_TAG
+      working-directory: nodeapp
     - name: Deploy to GKE
       env:
         GOOGLE_PROJECT: ${{ secrets.GCP_PROJECT_ID }}
@@ -39,3 +40,33 @@ jobs:
         sed -i "s/GOOGLE_PROJECT/$GOOGLE_PROJECT/g" resources.yaml
         sed -i "s/IMAGE_TAG/$IMG_TAG/g" resources.yaml
         kubectl apply -f resources.yaml
+    # - uses: hashicorp/setup-terraform@v2
+    # - name: Docker Deploy
+    #   run: |
+    #     gcloud container clusters get-credentials my-gke-cluster --region europe-central2 --project task-management-app-430719
+    #     cd k8s        
+    #     kubectl apply -f deploy.yml
+    #     kubectl apply -f service.yml
+
+    # ${{ github.sha }}
+    #      terraform init -backend-config="bucket=$GCP_TF_STATE_BUCKET_NAME" -backend-config="prefix=k8s"
+    # terraform plan \
+    # -var="container_image=europe-central2-docker.pkg.dev/task-management-app-430719/test/tma_front_image:$IMAGE_TAG" \
+    # -out=PLAN
+    # terraform apply "PLAN"
+    # - name: Terraform upgrade
+    #   run: terraform init -upgrade
+    # - name: Terraform init
+    #   run: terraform init -backend-config="bucket=$GCP_TF_STATE_BUCKET_NAME" -backend-config="prefix=k8s"
+    #   working-directory: terraform
+    # - name: Terraform Plan
+    #   run: |
+    #     terraform plan \
+    #     -var="project_id=task-management-app-430719" \
+    #     -var="container_image=europe-central2-docker.pkg.dev/task-management-app-430719/test/tma_front_image:$IMAGE_TAG" \
+    #     -out=PLAN
+    #   working-directory: terraform
+    # - name: Terraform apply
+    #   run: terraform apply PLAN
+    #   working-directory: terraform
+
